@@ -1,0 +1,635 @@
+/* ===== RESET GLOBAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f3f4f6;
+  color: #1f2933;
+}
+
+/* ====== NAVBAR ====== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #334e68;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ffa94d;
+}
+
+nav ul li a.active {
+  color: #ffa94d;
+}
+
+/* Responsive menu (simple) */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+  }
+}
+
+/* ===== HERO WRAPPER ===== */
+.hero-wrapper {
+  padding: 30px 16px 40px;
+}
+
+/* ===== HERO CONTAINER ===== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 480px;
+  border-radius: 18px;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.15);
+}
+
+.left {
+  flex: 1;
+  background: url('../images/Chelsea.webp') center/cover no-repeat;
+  min-height: 280px;
+}
+
+.right {
+  flex: 1.1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  background-color: #fdfdfd;
+}
+
+/* ===== HERO TEXT ===== */
+
+.hero-eyebrow {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #737a7a;
+  margin-bottom: 6px;
+}
+
+.hero-title {
+  font-size: 2.4rem;
+  margin-bottom: 4px;
+  color: #111827;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: #4b5563;
+  margin-bottom: 12px;
+}
+
+.hero-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.hero-stars {
+  color: #ccae8e;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.hero-rating-text {
+  font-size: 0.86rem;
+  color: #6b7280;
+}
+
+/* ===== BTN PRINCIPAL ===== */
+
+.btn-main {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffa94d;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 30px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+
+.btn-main:hover {
+  background-color: #ff922b;
+  transform: translateY(-1px);
+}
+
+/* ===== CARTES HERO ===== */
+
+.cards {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  align-items: stretch;
+  /* toutes les cartes même hauteur */
+}
+
+.card {
+  flex: 1;
+  background-color: #334e68;
+  color: #ffffff;
+  padding: 22px 22px 20px;
+  border-radius: 10px;
+  min-width: 220px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.25);
+
+  /* IMPORTANT : la carte devient un conteneur flex vertical */
+  display: flex;
+  flex-direction: column;
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.card p {
+  font-size: 0.9rem;
+  line-height: 1.45;
+  margin-bottom: 16px;
+
+  /* prend toute la hauteur dispo, pousse le bouton vers le bas */
+  flex: 1;
+}
+
+.btn-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  /* met le bouton en bas de la carte et centré horizontalement */
+  margin-top: auto;
+  align-self: center;
+
+  background: #ffffff;
+  color: #334e68;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.3s ease, color 0.3s ease;
+
+  /* laisse le texte aller à la ligne pour ne pas être coupé */
+  white-space: normal;
+}
+
+.btn-card:hover {
+  background: #334e68;
+  color: #ffffff;
+}
+
+
+/* ===== RESPONSIVE HERO ===== */
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .right {
+    padding: 24px 20px 28px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-wrapper {
+    padding: 20px 12px 30px;
+  }
+
+  .left {
+    height: 260px;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+}
+
+/* ====== PAGE DE CONNEXION ====== */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f5f7fa;
+}
+
+.login-box {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  width: 350px;
+  text-align: center;
+}
+
+.login-box h2 {
+  margin-bottom: 25px;
+  color: #334e68;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  background-color: #ffa94d;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background 0.3s;
+}
+
+.login-box button:hover {
+  background-color: #ff922b;
+}
+
+.login-box p {
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.login-box a {
+  color: #334e68;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-box a:hover {
+  text-decoration: underline;
+}
+
+/* ====== PAGE D’ENREGISTREMENT ====== */
+.register-box {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  width: 400px;
+  text-align: center;
+}
+
+.register-box h2 {
+  margin-bottom: 25px;
+  color: #334e68;
+}
+
+.register-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.register-box button {
+  width: 100%;
+  padding: 12px;
+  background-color: #ffa94d;
+  border: none;
+  border-radius: 8px;
+  color: white;
+}
+
+/* ===== SECTION SERVICES ===== */
+.services {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background: linear-gradient(to right, #ffcf7d, #ffb347);
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.service {
+  flex: 1;
+  min-width: 220px;
+  margin: 20px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.service .icon {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.service button {
+  margin-top: 15px;
+  background: white;
+  color: #ffa94d;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.service button:hover {
+  background: #334e68;
+  color: white;
+}
+
+/* ===== SECTION PACKAGES ===== */
+.packages {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.packages h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #334e68;
+}
+
+.package-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.package {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  width: 280px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.package h3 {
+  margin-bottom: 15px;
+  color: #334e68;
+}
+
+.package p {
+  margin: 10px 0;
+}
+
+.package .price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffa94d;
+}
+
+.package button {
+  margin-top: 15px;
+  background: #ffa94d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.package button:hover {
+  background: #ff922b;
+}
+
+/* ===== SECTION AVIS ===== */
+.reviews {
+  padding: 10px 16px 50px;
+  background-color: #f3f4f6;
+}
+
+.reviews-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.reviews-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 18px;
+  align-items: center;
+  /* <-- centre le bloc */
+  text-align: center;
+  /* <-- texte centré */
+}
+
+.reviews-title {
+  font-size: 2rem;
+  /* <-- même taille que .packages h2 */
+  color: #334e68;
+  /* <-- même couleur que “Formules de coaching” */
+}
+
+.reviews-subtitle {
+  font-size: 0.9rem;
+  color: #6b7280;
+  max-width: 600px;
+  /* optionnel : largeur raisonnable */
+  margin: 0 auto;
+}
+
+
+/* grid des cartes d'avis */
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.review-card {
+  background-color: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  padding: 14px 16px 16px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  font-size: 0.88rem;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.review-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background-color: #334e68;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.review-name {
+  font-weight: 600;
+  color: #111827;
+}
+
+.review-meta {
+  font-size: 0.78rem;
+  color: #6b7280;
+}
+
+.review-stars {
+  color: #ffa94d;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+}
+
+.review-text {
+  color: #4b5563;
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+/* responsive avis */
+@media (max-width: 900px) {
+  .reviews-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .reviews {
+    padding: 10px 12px 40px;
+  }
+
+  .reviews-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ===== mes-reservations === */
+.reservations-container {
+  width: 80%;
+  max-width: 900px;
+  margin: auto;
+}
+
+.reservation-card {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  margin-bottom: 22px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reservation-content h3 {
+  margin: 0 0 8px 0;
+}
+
+.reservation-content p {
+  margin: 2px 0;
+  color: #555;
+}
+
+.details-btn {
+  background: #ffbf63;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background: white;
+  border: 2px solid #c63c50;
+  color: #c63c50;
+  padding: 10px 18px;
+  border-radius: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #334e68;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}

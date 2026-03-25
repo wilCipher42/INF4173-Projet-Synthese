@@ -1,0 +1,61 @@
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Contact</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">MonSite</div>
+  <ul>
+    <li><a href="index.php">Accueil</a></li>
+    <li><a href="services.php">Services</a></li>
+    <li><a href="contact.php" class="active">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="login-container">
+
+<div class="login-box">
+
+<h2>Contactez-nous</h2>
+
+<?php
+if(isset($_SESSION['success'])){
+    echo "<p style='color:green'>" . $_SESSION['success'] . "</p>";
+    unset($_SESSION['success']);
+}
+?>
+
+<form action="traitement_contact.php" method="POST">
+
+<input type="text" name="nom" placeholder="Votre nom" required>
+
+<input type="email" name="email" placeholder="Votre email" required>
+
+<input type="text" name="sujet" placeholder="Sujet" required>
+
+<textarea name="message" placeholder="Votre message" required
+style="width:100%;height:120px;padding:12px;margin-top:10px;border-radius:8px;border:1px solid #ccc;"></textarea>
+
+<button type="submit">Envoyer</button>
+
+</form>
+
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 MonSite - Tous droits réservés</p>
+</footer>
+
+</body>
+</html>
